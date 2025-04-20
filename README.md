@@ -1,25 +1,26 @@
-Here’s a `README.md` file template for your hash generator tool that you can post on GitHub:
+Got it! Here’s an updated version of the `README.md` file for your **Masher** repository with the installation steps reflecting Puppeteer installation and script name changes:
 
 ---
 
-# MASHER
+# Masher - Hash Generator Tool
 
-A simple CLI tool built with Node.js to generate **MD5** and **SHA1** hashes locally. This tool allows you to input text, and it will return the corresponding MD5 and SHA1 hashes without relying on external websites.
+Masher is a Node.js CLI tool that uses **Puppeteer** to automate the process of generating **MD5** and **SHA1** hashes from a given text input. The tool interacts with an online MD5 hash generator and extracts the resulting hashes.
 
 ---
 
 ## Features
 
-- **MD5 Hash Generation**: Generate MD5 hashes from any input string.
-- **SHA1 Hash Generation**: Generate SHA1 hashes from any input string.
-- **No External Dependencies**: Operates entirely offline with the built-in Node.js `crypto` module.
-- **Simple CLI Interface**: Easily use the tool via the terminal.
+- **Automated Hash Generation**: Automatically generates MD5 and SHA1 hashes from user-provided text.
+- **Puppeteer-based Web Scraping**: Uses Puppeteer to interact with an online MD5 hash generator.
+- **Headless Browser**: Runs headlessly, no need for a browser interface.
+- **Simple CLI**: Easy-to-use command-line interface.
 
 ---
 
 ## Requirements
 
-- **Node.js**: The tool requires Node.js (version 12 or later) to run.
+- **Node.js**: Version 12 or later is required.
+- **Puppeteer**: To automate the process of generating hashes via a web interface.
 
 ---
 
@@ -34,15 +35,19 @@ cd masher
 
 ### 2. Install Dependencies
 
-This tool uses the built-in Node.js `crypto` module, so no additional dependencies are needed.
+Install the necessary dependencies, including Puppeteer:
+
+```bash
+npm install puppeteer
+```
 
 ---
 
 ## Usage
 
-### 1. Run the Tool
+### 1. Run the Script
 
-In your terminal, navigate to the project directory and run the following command:
+After installing dependencies, run the script using the following command:
 
 ```bash
 node hash-fetcher.js
@@ -50,7 +55,7 @@ node hash-fetcher.js
 
 ### 2. Enter the Text to Hash
 
-The script will prompt you to enter the text you want to hash.
+The script will prompt you to enter the text you want to hash:
 
 ```
 ENTER TEXT TO HASH:
@@ -71,7 +76,7 @@ SHA1: <sha1-hash>
 ## Example
 
 ```bash
-$ node local-hash-generator.js
+$ node hash-fetcher.js
 ENTER TEXT TO HASH: Hello World
 --- HASH RESULTS ---
 MD5 : b94d27b9934d3e08a52e52d7da7dabf3
@@ -80,12 +85,29 @@ SHA1: 2ef7bde608ce5404e97d5f042f95f89f1c232871
 
 ---
 
+## Troubleshooting
+
+- **Error: Failed to launch the browser process**  
+  This error may occur if you're running the script as the root user. Add the `--no-sandbox` flag to Puppeteer by modifying the launch options in the script like this:
+  
+  ```javascript
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+  ```
+
+- **No element found for selector**  
+  If the script fails to find the input fields or buttons, the website may have changed. Use browser developer tools to inspect the site and adjust the script accordingly.
+
+---
+
 ## Contributing
 
-Feel free to fork this repository and submit pull requests for improvements, bug fixes, or additional features.
+Feel free to fork this repository, make improvements, and submit pull requests.
 
 1. Fork the repository.
-2. Clone your fork: `git clone https://github.com/yourusername/local-hash-generator.git`
+2. Clone your fork: `git clone https://github.com/yourusername/masher.git`
 3. Create a new branch: `git checkout -b feature/your-feature`
 4. Commit your changes: `git commit -am 'Add new feature'`
 5. Push to your fork: `git push origin feature/your-feature`
@@ -99,4 +121,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Feel free to adjust the repository URL, author name, and any other project-specific details.
+### Notes:
+
+- Replace `yourusername` with your actual GitHub username.
+- Let me know if you need help with any further adjustments or enhancements!
