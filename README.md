@@ -2,7 +2,7 @@ Here’s a `README.md` file template for your hash generator tool that you can p
 
 ---
 
-# Local Hash Generator Tool
+# MASHER
 
 A simple CLI tool built with Node.js to generate **MD5** and **SHA1** hashes locally. This tool allows you to input text, and it will return the corresponding MD5 and SHA1 hashes without relying on external websites.
 
@@ -28,8 +28,8 @@ A simple CLI tool built with Node.js to generate **MD5** and **SHA1** hashes loc
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/local-hash-generator.git
-cd local-hash-generator
+git clone https://github.com/yourusername/masher.git
+cd masher
 ```
 
 ### 2. Install Dependencies
@@ -45,7 +45,7 @@ This tool uses the built-in Node.js `crypto` module, so no additional dependenci
 In your terminal, navigate to the project directory and run the following command:
 
 ```bash
-node local-hash-generator.js
+node hash-fetcher.js
 ```
 
 ### 2. Enter the Text to Hash
