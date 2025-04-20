@@ -29,7 +29,7 @@ Masher is a Node.js CLI tool that uses **Puppeteer** to automate the process of 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/masher.git
+git clone https://github.com/CarlosMasio/masher.git
 cd masher
 ```
 
